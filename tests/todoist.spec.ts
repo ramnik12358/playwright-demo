@@ -19,6 +19,8 @@ async function login(page: Page, username: string) {
     await emailTextField.fill(username);
     await passwordTextField.fill(PASSWORD);
     await loginButton.click();
+
+    await page.waitForURL('https://app.todoist.com/app/today');
 }
 
 async function openTaskModal(page: Page) {
